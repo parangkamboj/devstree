@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">LocationCheck</string>
+    <string name="location_sources">Location Sources</string>
+    <string name="sort">Sort</string>
+    <string name="add_poi">Add POI</string>
+    <string name="search_places">Search Places</string>
+    <string name="API_KEY_FOR_PLACES_API">AIzaSyBSNyp6GQnnKlrMr7hD2HGiyF365tFlK5U</string>
+    <string name="search">Search..</string>
+    <string name="update">Update</string>
+    <string name="do_you_want_to_add_this_location_to_list">Do you want to add this location to list?</string>
+</resources>

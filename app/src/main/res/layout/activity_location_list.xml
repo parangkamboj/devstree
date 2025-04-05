@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".LocationListActivity">
+
+        <RelativeLayout
+            android:id="@+id/rl_toolBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="@dimen/dp12"
+            android:background="@color/white"
+            android:elevation="@dimen/_2dp"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!--<androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/arrow_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp20"
+                android:padding="@dimen/dp5"
+                android:src="@drawable/arrow_back" />-->
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/TextBlack16sp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/dp12"
+                android:layout_centerInParent="true"
+                android:padding="2dp"
+                android:text="@string/location_sources" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/TextBlack16sp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="@dimen/dp12"
+                android:layout_centerInParent="true"
+                android:padding="2dp"
+                android:id="@+id/tv_sort"
+                android:layout_marginEnd="@dimen/dp20"
+                android:text="@string/sort" />
+
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:clipToPadding="true"
+            android:padding="@dimen/dp12"
+            app:layout_constraintTop_toBottomOf="@id/rl_toolBar"
+            app:layout_constraintBottom_toTopOf="@id/btn_add_poi"
+            android:id="@+id/location_rv" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginHorizontal="@dimen/dp20"
+            android:layout_marginBottom="@dimen/dp12"
+            android:text="@string/add_poi"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_16sp"
+            android:id="@+id/btn_add_poi"
+            android:background="@color/cardview_dark_background" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btn_add_poi"
+            android:layout_marginEnd="@dimen/dp12"
+            android:layout_marginBottom="@dimen/dp20"
+            android:src="@android:drawable/ic_dialog_map"
+            android:id="@+id/btn_navigate" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
