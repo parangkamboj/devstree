@@ -202,17 +202,16 @@ class LocationListActivity : AppCompatActivity() {
 
         sortBottomSheetBinding.apply {
             btnSortApply.setOnClickListener {
+                Log.d("Parang", "openSortBS: $listModel")
                 val selectedId = radioGroupSort.checkedRadioButtonId
+
                 listModel = when (selectedId) {
+
                     R.id.radioAsc -> listModel
-                        ?.sortedWith(compareBy<AddressSuggestModel?>(
-                            { it?.distance == null },
-                            { it?.distance }
-                        ))
+                        ?.sortedWith(compareBy(nullsFirst()) { it.distance })
+
                     R.id.radioDesc -> listModel
-                        ?.sortedWith(compareBy<AddressSuggestModel?>(
-                            { it?.distance == null },
-                        ).reversed())
+                        ?.sortedWith(compareBy(nullsLast()) { it.distance })?.reversed()
 
                     else -> listModel
                 }
